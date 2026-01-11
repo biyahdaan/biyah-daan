@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biyah Daan - Registration</title>
+    <link rel="stylesheet" href="register-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="reg-container">
+        <div class="lang-bar">
+            <button onclick="changeLang('en')">English</button>
+            <button onclick="changeLang('hi')">हिंदी</button>
+            <button onclick="changeLang('mai')">मैथिली</button>
+            <button onclick="changeLang('bho')">भोजपुरी</button>
+        </div>
+
+        <div class="reg-box">
+            <h1 class="hindi-title">ब्याह दान</h1>
+            <p id="reg-sub">Select Registration Type</p>
+
+            <div class="type-selection" id="typeSelection">
+                <button class="type-card" onclick="showForm('vendor')">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1063/1063376.png">
+                    <span>Vendor Registration</span>
+                </button>
+                <button class="type-card" onclick="showForm('client')">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4140/4140037.png">
+                    <span>Client Registration</span>
+                </button>
+            </div>
+
+            <form id="vendorForm" class="hidden-form">
+                <h3>Vendor Details</h3>
+                <input type="text" placeholder="Full Name" required id="vName">
+                <input type="tel" placeholder="Mobile Number" required id="vMob">
+                <input type="email" placeholder="Email (Optional)" id="vEmail">
+                <input type="tel" placeholder="2nd Mobile (Optional)" id="vMob2">
+                <textarea placeholder="Full Address" id="vAddr"></textarea>
+                
+                <label>Select Services (Multiple):</label>
+                <div class="services-grid">
+                    <label><input type="checkbox" value="DJ"> DJ</label>
+                    <label><input type="checkbox" value="Tent"> Tent</label>
+                    <label><input type="checkbox" value="Photographer"> Photographer</label>
+                    <label><input type="checkbox" value="Catering"> Catering</label>
+                    <label><input type="checkbox" value="Decoration"> Decoration</label>
+                    <label><input type="checkbox" value="Band"> Band Baaja</label>
+                </div>
+                <button type="button" class="reg-btn" onclick="submitData('vendor')">Register Now</button>
+            </form>
+
+            <form id="clientForm" class="hidden-form">
+                <h3>Client Details</h3>
+                <input type="text" placeholder="Full Name" required id="cName">
+                <input type="tel" placeholder="Mobile Number" required id="cMob">
+                <input type="email" placeholder="Email (Optional)" id="cEmail">
+                <input type="tel" placeholder="2nd Mobile (Optional)" id="cMob2">
+                <textarea placeholder="Full Address" id="cAddr"></textarea>
+                <button type="button" class="reg-btn" onclick="submitData('client')">Register Now</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="register-script.js"></script>
+</body>
+</html>
