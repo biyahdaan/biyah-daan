@@ -28,11 +28,32 @@
                 <button class="otp-btn" onclick="sendOTP()">SEND OTP</button>
 
                 <div class="new-user">
-                    <a href="register.html">I am new user? Registration Now</a>
+                    <a href="#">I am new user? Registration Now</a>
                 </div>
             </div>
         </div>
     </div>
+<!-- Registration Popup -->
+<div id="registerPopup" class="popup">
+  <div class="popup-box">
+    <h2>New User Registration</h2>
+
+    <input type="text" id="regName" placeholder="Full Name">
+    <input type="text" id="regMobile" placeholder="Mobile Number">
+    <input type="email" id="regEmail" placeholder="Email (Optional)">
+
+    <h4>Address</h4>
+    <input placeholder="Village / Town" id="village">
+    <input placeholder="Post" id="post">
+    <input placeholder="PS" id="ps">
+    <input placeholder="District" id="district">
+    <input placeholder="Pincode" id="pincode">
+    <input placeholder="Extra Address" id="extra">
+
+    <button onclick="registerUser()">Register</button>
+    <button onclick="closePopup()">Close</button>
+  </div>
+</div>
 
     <script src="login-script.js"></script>
 </body>
