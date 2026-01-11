@@ -11,7 +11,8 @@ connectDB();
 
 app.use(express.json());
 app.use(cors());
-
+// Static files serve karne ke liye
+app.use(express.static('public'));
 app.get('/', (req, res) => {
   res.send("Biyah Daan API is Working!");
 });
