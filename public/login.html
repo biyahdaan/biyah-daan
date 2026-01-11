@@ -4,108 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biyah Daan - Login</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login-style.css">
     <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet">
-    <style>
-        .login-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 80vh;
-        }
-        .login-card {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
-        .login-card h2 {
-            font-family: 'Rozha One', serif;
-            color: #2874f0;
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-        .input-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-        .input-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #667;
-            font-weight: 500;
-        }
-        .input-group input {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            outline: none;
-            font-size: 16px;
-        }
-        .otp-btn {
-            width: 100%;
-            background: #fb641b; /* Flipkart Orange for action */
-            color: white;
-            border: none;
-            padding: 12px;
-            font-weight: bold;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: 0.3s;
-        }
-        .otp-btn:hover {
-            background: #e65a16;
-        }
-        .register-link {
-            margin-top: 25px;
-            font-size: 14px;
-            color: #666;
-        }
-        .register-link a {
-            color: #2874f0;
-            text-decoration: none;
-            font-weight: bold;
-        }
-    </style>
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="nav-container">
-            <div class="logo" onclick="window.location.href='index.html'" style="cursor:pointer">
-                <h1 class="hindi-title">ब्याह दान</h1>
-            </div>
-        </div>
-    </header>
-
     <div class="login-container">
-        <div class="login-card">
-            <h2>ब्याह दान Login</h2>
-            <form id="loginForm">
-                <div class="input-group">
-                    <label>Mobile Number</label>
-                    <input type="tel" id="mobile" placeholder="Enter your 10 digit number" required maxlength="10">
-                </div>
-                <button type="submit" class="otp-btn">SEND OTP</button>
-            </form>
+        <div class="login-left">
+            <h1 class="hindi-title">ब्याह दान</h1>
+            <p>Login to find your perfect life partner.</p>
+            <img src="https://cdn-icons-png.flaticon.com/512/3656/3656933.png" alt="icon" class="login-icon">
+        </div>
 
-            <div class="register-link">
-                I am new user? <a href="register.html">REGISTRATION NOW</a>
+        <div class="login-right">
+            <div class="form-box">
+                <div class="input-group">
+                    <input type="text" id="mobileNumber" required>
+                    <label>Enter Mobile Number</label>
+                </div>
+                
+                <p class="terms">By continuing, you agree to Biyah Daan's <span>Terms of Use</span> and <span>Privacy Policy</span>.</p>
+                
+                <button class="otp-btn" onclick="sendOTP()">SEND OTP</button>
+
+                <div class="new-user">
+                    <a href="register.html">I am new user? Registration Now</a>
+                </div>
             </div>
         </div>
     </div>
 
-    <script>
-        document.getElementById('loginForm').onsubmit = function(e) {
-            e.preventDefault();
-            const mobile = document.getElementById('mobile').value;
-            alert("OTP sent to: " + mobile + "\n(Backend integration jaldi hi aayega!)");
-        };
-    </script>
+    <script src="login-script.js"></script>
 </body>
 </html>
