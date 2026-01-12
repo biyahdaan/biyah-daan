@@ -4,57 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biyah Daan - Login</title>
-    <link rel="stylesheet" href="login-style.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login-style.css">
 </head>
 <body>
 
-    <div class="login-container">
-        <div class="login-left">
-            <h1 class="hindi-title">ब्याह दान</h1>
-            <p>Login to find your perfect life partner.</p>
-            <img src="https://cdn-icons-png.flaticon.com/512/3656/3656933.png" alt="icon" class="login-icon">
+    <!-- APP BAR -->
+    <header class="app-bar">
+        <h1 class="hindi-title">ब्याह दान</h1>
+    </header>
+
+    <!-- LOGIN CARD -->
+    <div class="login-card">
+
+        <p class="subtitle">Login to find your perfect life partner</p>
+
+        <div class="input-group">
+            <input type="text" id="mobileNumber" required>
+            <label>Mobile Number</label>
         </div>
 
-        <div class="login-right">
-            <div class="form-box">
-                <div class="input-group">
-                    <input type="text" id="mobileNumber" required>
-                    <label>Enter Mobile Number</label>
-                </div>
-                
-                <p class="terms">By continuing, you agree to Biyah Daan's <span>Terms of Use</span> and <span>Privacy Policy</span>.</p>
-                
-                <button class="otp-btn" onclick="sendOTP()">SEND OTP</button>
+        <p class="terms">
+            By continuing, you agree to our
+            <span>Terms</span> & <span>Privacy Policy</span>
+        </p>
 
-                <div class="new-user">
-                  <a href="#" onclick="openRegister()">I am new user? Registration Now</a>
+        <button class="primary-btn" onclick="sendOTP()">SEND OTP</button>
 
-                </div>
+        <p class="new-user">
+            <a href="#" onclick="openRegister()">New user? Register now</a>
+        </p>
+
+    </div>
+
+    <!-- REGISTRATION POPUP -->
+    <div id="registerPopup" class="popup">
+        <div class="popup-box">
+
+            <h2>New User Registration</h2>
+
+            <input id="regName" placeholder="Full Name">
+            <input id="regMobile" placeholder="Mobile Number">
+            <input id="regEmail" placeholder="Email (Optional)">
+
+            <h4>Address</h4>
+
+            <div class="grid">
+                <input id="village" placeholder="Village">
+                <input id="post" placeholder="Post">
+                <input id="ps" placeholder="PS">
+                <input id="district" placeholder="District">
+                <input id="pincode" placeholder="Pincode">
             </div>
+
+            <input id="extra" placeholder="Extra Address">
+
+            <button class="primary-btn" onclick="registerUser()">REGISTER</button>
+            <button class="secondary-btn" onclick="closePopup()">CLOSE</button>
+
         </div>
     </div>
-<!-- Registration Popup -->
-<div id="registerPopup" class="popup">
-  <div class="popup-box">
-    <h2>New User Registration</h2>
-
-    <input type="text" id="regName" placeholder="Full Name">
-    <input type="text" id="regMobile" placeholder="Mobile Number">
-    <input type="email" id="regEmail" placeholder="Email (Optional)">
-
-    <h4>Address</h4>
-    <input placeholder="Village / Town" id="village">
-    <input placeholder="Post" id="post">
-    <input placeholder="PS" id="ps">
-    <input placeholder="District" id="district">
-    <input placeholder="Pincode" id="pincode">
-    <input placeholder="Extra Address" id="extra">
-
-    <button onclick="registerUser()">Register</button>
-    <button onclick="closePopup()">Close</button>
-  </div>
-</div>
 
     <script src="login-script.js"></script>
 </body>
