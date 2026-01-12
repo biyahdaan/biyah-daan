@@ -1,46 +1,56 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biyah Daan</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biyah Daan</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- TOP APP BAR -->
-    <header class="app-bar">
-        <h1 class="hindi-title">ब्याह दान</h1>
-    </header>
+<header class="app-bar">
+  <h1 class="hindi-title">ब्याह दान</h1>
+</header>
 
-    <!-- SEARCH -->
-    <div class="search-container">
-        <input type="text" placeholder="Search Life Partner">
-        <button>🔍</button>
-    </div>
+<div class="search-container">
+  <input placeholder="Search Life Partner">
+  <button>🔍</button>
+</div>
 
-    <!-- MAIN CONTENT -->
-    <main class="content">
-        <div class="card">
-            <h3>Welcome 🙏</h3>
-            <p>Find your perfect life partner</p>
-            <button class="primary-btn" onclick="openLogin()">Login</button>
-        </div>
-    </main>
+<!-- HOME -->
+<section id="home" class="page">
+  <div class="card">
+    <h3>Welcome 🙏</h3>
+    <p>Find your perfect life partner</p>
+    <button id="loginBtn" class="primary-btn" onclick="openLogin()">Login</button>
+  </div>
+</section>
 
-    <!-- BOTTOM NAVIGATION (ANDROID STYLE) -->
-    <nav class="bottom-nav">
-        <div class="nav-item active">🏠<span>Home</span></div>
-        <div class="nav-item">❤️<span>Matches</span></div>
-        <div class="nav-item">👤<span>Profile</span></div>
-    </nav>
+<!-- PROFILE -->
+<section id="profile" class="page" style="display:none">
+  <div class="card">
+    <img id="profilePic" src="default-avatar.png" class="avatar">
+    <input type="file" onchange="uploadPhoto(event)">
+    <button onclick="removePhoto()">Remove Photo</button>
 
-    <!-- JS -->
-    <script src="script.js"></script>
+    <input id="pname" placeholder="Name">
+    <input id="pmobile" disabled>
+    <textarea id="paddress" placeholder="Address"></textarea>
+
+    <button class="primary-btn" onclick="saveProfile()">Save</button>
+  </div>
+</section>
+
+<!-- BOTTOM NAV -->
+<nav id="bottomNav" class="bottom-nav" style="display:none">
+  <div class="nav-item active" onclick="showPage('home')">🏠<span>Home</span></div>
+  <div class="nav-item" onclick="showPage('profile')">👤<span>Profile</span></div>
+  <div class="nav-item">🛒<span>Vendor</span></div>
+</nav>
+
+<script src="script.js"></script>
 </body>
 </html>
