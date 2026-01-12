@@ -1,71 +1,32 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biyah Daan - Login</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="login-style.css">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="login-style.css">
 </head>
 <body>
 
-    <!-- APP BAR -->
-    <header class="app-bar">
-        <h1 class="hindi-title">ब्याह दान</h1>
-    </header>
+<div class="login-card">
+<h3>Login</h3>
 
-    <!-- LOGIN CARD -->
-    <div class="login-card">
+<input id="mobileNumber" placeholder="Mobile Number">
+<button onclick="sendOTP()">Login</button>
 
-        <p class="subtitle">Login to find your perfect life partner</p>
+<p><a onclick="openRegister()">New user? Register</a></p>
+</div>
 
-        <div class="input-group">
-            <input type="text" id="mobileNumber" required>
-            <label>Mobile Number</label>
-        </div>
+<div id="registerPopup" class="popup">
+<div class="popup-box">
+<input id="regName" placeholder="Name">
+<input id="regMobile" placeholder="Mobile">
+<input id="village" placeholder="Village">
+<input id="district" placeholder="District">
 
-        <p class="terms">
-            By continuing, you agree to our
-            <span>Terms</span> & <span>Privacy Policy</span>
-        </p>
+<button onclick="registerUser()">Register</button>
+<button onclick="closePopup()">Close</button>
+</div>
+</div>
 
-        <button class="primary-btn" onclick="sendOTP()">SEND OTP</button>
-
-        <p class="new-user">
-            <a href="#" onclick="openRegister()">New user? Register now</a>
-        </p>
-
-    </div>
-
-    <!-- REGISTRATION POPUP -->
-    <div id="registerPopup" class="popup">
-        <div class="popup-box">
-
-            <h2>New User Registration</h2>
-
-            <input id="regName" placeholder="Full Name">
-            <input id="regMobile" placeholder="Mobile Number">
-            <input id="regEmail" placeholder="Email (Optional)">
-
-            <h4>Address</h4>
-
-            <div class="grid">
-                <input id="village" placeholder="Village">
-                <input id="post" placeholder="Post">
-                <input id="ps" placeholder="PS">
-                <input id="district" placeholder="District">
-                <input id="pincode" placeholder="Pincode">
-            </div>
-
-            <input id="extra" placeholder="Extra Address">
-
-            <button class="primary-btn" onclick="registerUser()">REGISTER</button>
-            <button class="secondary-btn" onclick="closePopup()">CLOSE</button>
-
-        </div>
-    </div>
-
-    <script src="login-script.js"></script>
+<script src="login-script.js"></script>
 </body>
 </html>
