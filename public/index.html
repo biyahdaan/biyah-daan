@@ -3,32 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biyah Daan - Matrimony</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Biyah Daan</title>
+
+    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Rozha+One&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <h1 class="hindi-title">ब्याह दान</h1>
-            </div>
-
-            <div class="search-box">
-                <input type="text" placeholder="Search for Life Partner...">
-                <button>🔍</button>
-            </div>
-
-            <div class="nav-auth">
-                <button class="login-btn" onclick="openLogin()">Login</button>
-            </div>
-        </div>
+    <!-- TOP APP BAR -->
+    <header class="app-bar">
+        <h1 class="hindi-title">ब्याह दान</h1>
     </header>
 
-    <main>
-        </main>
+    <!-- SEARCH -->
+    <div class="search-container">
+        <input type="text" placeholder="Search Life Partner">
+        <button>🔍</button>
+    </div>
 
+    <!-- MAIN CONTENT -->
+    <main class="content">
+        <div class="card">
+            <h3>Welcome 🙏</h3>
+            <p>Find your perfect life partner</p>
+            <button class="primary-btn" onclick="openLogin()">Login</button>
+        </div>
+    </main>
+
+    <!-- BOTTOM NAVIGATION (ANDROID STYLE) -->
+    <nav class="bottom-nav">
+        <div class="nav-item active">🏠<span>Home</span></div>
+        <div class="nav-item">❤️<span>Matches</span></div>
+        <div class="nav-item">👤<span>Profile</span></div>
+    </nav>
+
+    <!-- JS -->
     <script src="script.js"></script>
 </body>
 </html>
