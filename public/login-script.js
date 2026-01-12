@@ -1,44 +1,32 @@
-function openRegister() {
-    document.getElementById("registerPopup").style.display = "flex";
+function openRegister(){
+  registerPopup.style.display="flex";
+}
+function closePopup(){
+  registerPopup.style.display="none";
 }
 
-function closePopup() {
-    document.getElementById("registerPopup").style.display = "none";
+function registerUser(){
+  const user={
+    fullName:regName.value,
+    mobile:regMobile.value,
+    address:{village:village.value,district:district.value}
+  };
+
+  // OTP SEND HERE (FUTURE)
+  // sendOTP(user.mobile);
+
+  localStorage.setItem("user",JSON.stringify(user));
+  alert("Registered Successfully");
+  window.location.href="index.html";
 }
 
-async function registerUser() {
+function sendOTP(){
+  const mobile=mobileNumber.value;
+  if(!/^[0-9]{10}$/.test(mobile)) return alert("Invalid mobile");
 
-    const data = {
-        fullName: regName.value.trim(),
-        mobile: regMobile.value.trim(),
-        email: regEmail.value.trim(),
-        address: {
-            village: village.value.trim(),
-            post: post.value.trim(),
-            ps: ps.value.trim(),
-            district: district.value.trim(),
-            pincode: pincode.value.trim(),
-            extra: extra.value.trim()
-        }
-    };
+  // OTP VERIFY CODE HERE (FUTURE)
+  // verifyOTP()
 
-    if (!data.fullName) return alert("Full name required");
-    if (!/^[0-9]{10}$/.test(data.mobile)) return alert("Valid mobile required");
-    if (!data.address.village || !data.address.district)
-        return alert("Village & District required");
-
-    alert("Registration successful (Demo)");
-    closePopup();
-}
-
-async function sendOTP() {
-
-    const mobile = mobileNumber.value.trim();
-
-    if (!/^[0-9]{10}$/.test(mobile)) {
-        alert("Enter valid mobile number");
-        return;
-    }
-
-    alert("OTP Sent (Demo)");
+  alert("Login Success (OTP skipped)");
+  window.location.href="index.html";
 }
